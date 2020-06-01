@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.jbit</groupId>
+    <artifactId>ApplnfoSyteam</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!--    web 项目需要导入 war包-->
+    <packaging>war</packaging>
+
+     <properties>
+         <spring.version>5.2.6.RELEASE</spring.version>
+         <mybatis.version>3.5.4</mybatis.version>
+         <mybatis-spring.version>2.0.4</mybatis-spring.version>
+         <tk.mybatis.version>4.1.5</tk.mybatis.version>
+         <pagehelper.version>5.1.11</pagehelper.version>
+         <mysql.version>5.1.49</mysql.version>
+         <druid.version>1.1.22</druid.version>
+         <junit.version>4.13</junit.version>
+         <lombok.version>1.18.12</lombok.version>
+         <slf4j-api.version>1.7.30</slf4j-api.version>
+     </properties>
+
+
+
+
+      <dependencies>
+<!--       spring   -->
+          <dependency>
+              <groupId>org.springframework</groupId>
+              <artifactId>spring-context</artifactId>
+              <version>${spring.version}</version>
+          </dependency>
+          <dependency>
+              <groupId>org.springframework</groupId>
+              <artifactId>spring-orm</artifactId>
+              <version>${spring.version}</version>
+          </dependency>
+          <dependency>
+              <groupId>org.springframework</groupId>
+              <artifactId>spring-webmvc</artifactId>
+              <version>${spring.version}</version>
+          </dependency>
+          <dependency>
+              <groupId>org.springframework</groupId>
+              <artifactId>spring-test</artifactId>
+              <version>${spring.version}</version>
+          </dependency>
+
+          <!--  mybatis-->
+          <dependency>
+              <groupId>org.mybatis</groupId>
+              <artifactId>mybatis</artifactId>
+              <version>${mybatis.version}</version>
+          </dependency>
+          <dependency>
+              <groupId>org.mybatis</groupId>
+              <artifactId>mybatis-spring</artifactId>
+              <version>${mybatis-spring.version}</version>
+          </dependency>
+          <dependency>
+              <groupId>tk.mybatis</groupId>
+              <artifactId>mapper</artifactId>
+              <version>${tk.mybatis.version}</version>
+          </dependency>
+
+          <!--分页-->
+          <dependency>
+              <groupId>com.github.pagehelper</groupId>
+              <artifactId>pagehelper</artifactId>
+              <version>${pagehelper.version}</version>
+          </dependency>
+
+          <!--       数据库   -->
+          <dependency>
+              <groupId>mysql</groupId>
+              <artifactId>mysql-connector-java</artifactId>
+              <version>${mysql.version}</version>
+          </dependency>
+          <dependency>
+              <groupId>com.alibaba</groupId>
+              <artifactId>druid</artifactId>
+              <version>${druid.version}</version>
+          </dependency>
+
+          <!--    单元测试    -->
+          <dependency>
+              <groupId>junit</groupId>
+              <artifactId>junit</artifactId>
+              <version>${junit.version}</version>
+          </dependency>
+          <dependency>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>${lombok.version}</version>
+          </dependency>
+<!--        日志  -->
+          <dependency>
+              <groupId>org.slf4j</groupId>
+              <artifactId>slf4j-api</artifactId>
+              <version>${slf4j-api.version}</version>
+          </dependency>
+<!-- server-->
+          <dependency>
+              <groupId>javax.servlet</groupId>
+              <artifactId>javax.servlet-api</artifactId>
+              <version>4.0.1</version>
+          </dependency>
+
+<!--    servlet    c标签之类的  页面中使用 c -->
+          <dependency>
+              <groupId>javax.servlet</groupId>
+              <artifactId>jstl</artifactId>
+              <version>1.2</version>
+          </dependency>
+
+<!--        json  阿贾克斯js  -->
+          <dependency>
+              <groupId>com.alibaba</groupId>
+              <artifactId>fastjson</artifactId>
+              <version>1.2.68</version>
+          </dependency>
+
+<!-- 文件上传 -->
+          <dependency>
+              <groupId>commons-fileupload</groupId>
+              <artifactId>commons-fileupload</artifactId>
+              <version>1.4</version>
+          </dependency>
+
+
+      </dependencies>
+
+           <!-- java jdk版本   -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <target>1.8</target>
+                    <source>1.8</source>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>
