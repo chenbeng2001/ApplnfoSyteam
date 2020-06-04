@@ -49,7 +49,8 @@
 <!--       所有都拦截    -->
            <mvc:mapping path="/**"/>
 <!--    不拦截登录页面  还有静态资源  每一次请求 都会进入到  com.jbit.utils.SysInterceptior 如果里面判断为false 跳到登录里面去       -->
-          <mvc:exclude-mapping path="/dev/login"/>
+          <mvc:exclude-mapping  path="/dev/login"/>
+           <mvc:exclude-mapping path="/backend/login"/>
            <mvc:exclude-mapping path="/statics/**"/>
            <!--   找到   拦截器的方法-->
            <bean class="com.jbit.utils.SysInterceptior"></bean>

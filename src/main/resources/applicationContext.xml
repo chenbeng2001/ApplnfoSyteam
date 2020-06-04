@@ -24,22 +24,21 @@
          <property name="username" value="${username}"></property>
          <property name="password" value="${password}"></property>
      </bean>
-<!-- 数据工厂  sessionFactory-->
+
+     <!-- 数据工厂  sessionFactory-->
      <bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
          <property name="dataSource" ref="dataSource"> </property>
-
-<!--  分页  pagehelper     -->
+         <!-- 分页pagehelper-->
          <property name="plugins">
              <array>
                  <bean class="com.github.pagehelper.PageInterceptor">
                      <!-- 这里的几个配置主要演示如何使用，如果不理解，一定要去掉下面的配置 -->
                      <property name="properties">
                          <value>
-<!--                             链接的数据库是mysql-->
+                          <!-- 链接的数据库是mysql-->
                              helperDialect=mysql
-<!--                         智能    -->
+                             <!-- 智能    -->
                              reasonable=true
-
                          </value>
                      </property>
                  </bean>

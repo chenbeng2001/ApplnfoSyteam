@@ -2,6 +2,10 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%--如果没有登录 直接输入网址跳转页面的 话 进入 判断 如果session 为空的话 跳转到登录页面--%>
+<c:if test="${sessionScope.devuser==null}">
+	<script>alert("没有登录，请先登录");location.href='/jsp/devlogin.jsp'</script>
+</c:if>
 <!DOCTYPE html>
 <html lang="en">
 <head>

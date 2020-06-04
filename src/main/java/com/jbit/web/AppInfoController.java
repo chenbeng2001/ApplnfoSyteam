@@ -36,6 +36,28 @@ public class AppInfoController {
     private AppVersionService appVersionService;
 
     /**
+     * 上架 与下架 APP
+     *
+     * */
+    @PutMapping("sale/{appId}/{type}")
+    @ResponseBody
+    public JsonResult sale(@PathVariable Long appId,@PathVariable String type){
+        AppInfo appInfo=new AppInfo();
+        appInfo.setId(appId);
+        if (type.equals("open")){
+            appInfo.setStatus(4L);
+        }else if (type.equals("close")){
+            appInfo.setStatus(5L);
+        }
+        int i = appinfoService.update(appInfo);
+        if (i != 0) {
+            return new JsonResult(true);
+        }
+        return new JsonResult(false);
+    }
+
+
+    /**
      *  删除图片
      *
      * */
@@ -185,8 +207,7 @@ public class AppInfoController {
    ,Long   queryCategoryLevel2
    ,Long   queryCategoryLevel3
     ) {
-
-            //取出 登录时 session 里面的 id  然后传入 到 appinfo 查出相对应的数据
+        //取出 登录时 session 里面的 id  然后传入 到 appinfo 查出相对应的数据
         DevUser devuser = (DevUser) session.getAttribute("devuser");
 
 //   查询列表方法     防止进入页面的时候session 丢失  没有登录的时候 不允许访问controller

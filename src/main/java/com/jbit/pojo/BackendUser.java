@@ -1,12 +1,14 @@
 package com.jbit.pojo;
 
-import java.io.Serializable;
-import java.util.Date;
+import lombok.Data;
+import tk.mybatis.mapper.annotation.KeySql;
+
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import lombok.Data;
-import tk.mybatis.mapper.annotation.KeySql;
+import javax.persistence.Transient;
+import java.io.Serializable;
+import java.util.Date;
 
 @Data
 @Table(name = "backend_user")
@@ -38,6 +40,11 @@ public class BackendUser implements Serializable {
 
     @Column(name = "userPassword")
     private String userpassword;
+
+    @Transient     //
+    private String usertypename;
+
+
 
     private static final long serialVersionUID = 1L;
 }

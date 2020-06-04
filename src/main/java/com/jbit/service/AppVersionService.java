@@ -27,15 +27,12 @@ public class AppVersionService {
      *
      * */
      public List<AppVersion> queryByAppId(long id){
-
          //排序
          Example example=new Example(AppVersion.class);
          // 按照数据库中的 modifyBy  升序进行 排序
          example.orderBy("modifydate").desc();
-
          Example.Criteria criteria= example.createCriteria();
          criteria.andEqualTo("appid",id);
-
          List<AppVersion> appVersions = appVersionMapper.selectByExample(example);
          appVersions.forEach(app->{
              //处理Appname
@@ -51,7 +48,6 @@ public class AppVersionService {
      *
      *
      * */
-
     public AppVersion queryById(Long id){
         return  appVersionMapper.selectByPrimaryKey(id);
 

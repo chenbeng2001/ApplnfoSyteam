@@ -71,7 +71,11 @@ public class AppinfoService {
         if (queryCategoryLevel3!=null&&queryCategoryLevel3!=0){
             criteria.andEqualTo("categorylevel3",queryCategoryLevel3);
         }
-        criteria.andEqualTo("devid",devid);
+        //公用的方法 如果是 后台系统管理员登录的 话 查询所有的 数据 不需要 查询个人的许菊
+        if (devid!=null){
+            criteria.andEqualTo("devid",devid);
+        }
+
         
         //最开始的按照id查询
 //        AppInfo appInfo = new AppInfo();
@@ -122,8 +126,8 @@ public class AppinfoService {
     // @Transactional 事物 增删改 需要添加事物
     //清空数据库 里面的相对定位和绝对定位
     @Transactional
-    public void update(AppInfo appInfo) {
-        appInfoMapper.updateByPrimaryKeySelective(appInfo);
+    public int update(AppInfo appInfo) {
+       return appInfoMapper.updateByPrimaryKeySelective(appInfo);
     }
 
      /**

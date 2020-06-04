@@ -61,7 +61,7 @@ public class AppVersionController {
      * */
     @GetMapping("appview/{id}")
     public String  appview(Model model,@PathVariable Long id){
-        System.out.println(id);
+
         AppInfo appInfo = appinfoService.qeruyCk(id);
         List<AppVersion> appVersions = appVersionService.queryByAppId(id);
         model.addAttribute("appInfo",appInfo);
